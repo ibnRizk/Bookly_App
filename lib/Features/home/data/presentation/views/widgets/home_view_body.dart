@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 import 'customappbar.dart';
@@ -11,7 +12,15 @@ class HomeViewBody extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Column(children: [CustomAppBar(), FeaturedBooksListView()]),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomAppBar(),
+            FeaturedBooksListView(),
+            SizedBox(height: 50),
+            Text('Best Sellar', style: Styles.titleMedium),
+          ],
+        ),
       ),
     );
   }
