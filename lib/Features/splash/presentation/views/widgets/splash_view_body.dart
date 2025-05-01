@@ -51,7 +51,7 @@ class _SplashViewbodyState extends State<SplashViewbody>
     );
 
     slidingAnimation = Tween<Offset>(
-      begin: const Offset(0, 2),
+      begin: const Offset(0, 6),
       end: Offset.zero,
     ).animate(animationController);
 
