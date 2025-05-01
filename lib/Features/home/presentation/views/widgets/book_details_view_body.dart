@@ -13,36 +13,46 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CustomBookDetailAppbar(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .2),
-            child: FeaturedListViewItem(),
-          ),
-          SizedBox(height: 43),
-          Text('The Jungle Book', style: Styles.textStyle30),
-          SizedBox(height: 6),
-          Text('Rudyard Kipling', style: Styles.textStyle18),
-          SizedBox(height: 18),
-          BookRating(mainAxisAlignment: MainAxisAlignment.center),
-          SizedBox(height: 37),
-          BooksAction(),
-          SizedBox(height: 20),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'You can also like',
-              style: Styles.textStyle18.copyWith(fontWeight: FontWeight.bold),
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomBookDetailAppbar(),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * .2),
+                  child: FeaturedListViewItem(),
+                ),
+                SizedBox(height: 43),
+                Text('The Jungle Book', style: Styles.textStyle30),
+                SizedBox(height: 6),
+                Text('Rudyard Kipling', style: Styles.textStyle18),
+                SizedBox(height: 18),
+                BookRating(mainAxisAlignment: MainAxisAlignment.center),
+                SizedBox(height: 37),
+                BooksAction(),
+                Expanded(child: SizedBox(height: 20)),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'You can also like',
+                    style: Styles.textStyle18.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16),
+                SimilarBooksListView(),
+                SizedBox(height: 15),
+              ],
             ),
           ),
-          SizedBox(height: 16),
-          SimilarBooksListView(),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
