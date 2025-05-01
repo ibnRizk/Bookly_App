@@ -1,18 +1,13 @@
-import 'package:bookly_app/Features/home/presentation/views/widgets/custom_list_view_item.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/similar_list_view.dart';
-import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-
-import 'book_rating.dart';
-import 'books_action.dart';
+import 'books_detail_section.dart';
 import 'custom_book_details_appbar.dart';
+import 'similer_books_section.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
@@ -23,30 +18,10 @@ class BookDetailsViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CustomBookDetailAppbar(),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: width * .2),
-                  child: FeaturedListViewItem(),
-                ),
-                SizedBox(height: 43),
-                Text('The Jungle Book', style: Styles.textStyle30),
-                SizedBox(height: 6),
-                Text('Rudyard Kipling', style: Styles.textStyle18),
-                SizedBox(height: 18),
-                BookRating(mainAxisAlignment: MainAxisAlignment.center),
-                SizedBox(height: 37),
-                BooksAction(),
+                BooksDetailSection(),
+
                 Expanded(child: SizedBox(height: 20)),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'You can also like',
-                    style: Styles.textStyle18.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 16),
-                SimilarBooksListView(),
+                SimilerBooksSection(),
                 SizedBox(height: 15),
               ],
             ),
