@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-
 class AssetsData {
   static const logo = 'assets/Logo.png';
-
-  static const image = 'assets/image 4.png';
-  static const star = 'assets/Star.png';
+  static const testImage = 'assets/image 4 (2).png';
 }
