@@ -1,26 +1,24 @@
 import 'package:bloc/bloc.dart';
-
 import 'package:equatable/equatable.dart';
 
 import '../../../data/models/book_model/book_model.dart';
 import '../../../data/repos/home_repo.dart';
 
-part 'featured_books_state.dart';
+part 'newset_books_state.dart';
 
-class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
-  FeaturedBooksCubit(this.homeRepo) : super(FeaturedBooksInitial());
+class NewsetBooksCubit extends Cubit<NewsetBooksState> {
+  NewsetBooksCubit(this.homeRepo) : super(NewsetBooksInitial());
 
   final HomeRepo homeRepo;
-
-  Future<void> fetchFeaturedBooks() async {
-    emit(FeaturedBooksLoading());
+  Future<void> fetchNewestBooks() async {
+    emit(NewsetBooksLoading());
     var result = await homeRepo.fetchFeaturedBooks();
     result.fold(
       (failure) {
-        emit(FeaturedBooksFailure(failure.errorMessage));
+        emit(NewsetBooksFailure(failure.errorMessage));
       },
       (books) {
-        emit(FeaturedBooksSuccess(books));
+        emit(NewsetBooksSuccess(books));
       },
     );
   }
