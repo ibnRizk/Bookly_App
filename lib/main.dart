@@ -1,7 +1,6 @@
 import 'package:bookly_app/Features/home/data/repos/home_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'Features/home/data/repos/home_repo_impl.dart';
 import 'Features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
 import 'Features/home/presentation/manger/newest_books_cubit/newset_books_cubit.dart';
