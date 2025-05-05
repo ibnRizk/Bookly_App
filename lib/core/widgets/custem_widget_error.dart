@@ -1,11 +1,17 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class CustemWidgetError extends StatelessWidget {
-  const CustemWidgetError({super.key, required this.errmessage});
-  final String errmessage;
+class CustomWidgetError extends StatelessWidget {
+  const CustomWidgetError({super.key, required this.errMessage});
+  final String errMessage;
   @override
   Widget build(BuildContext context) {
-    return Text(errmessage, style: Styles.textStyle18);
+    return Center(
+      child: Text(
+        errMessage,
+        style: Styles.textStyle18,
+        textAlign: TextAlign.center,
+      ),
+    );
   }
 }
